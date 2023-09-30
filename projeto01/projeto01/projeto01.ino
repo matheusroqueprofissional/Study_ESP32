@@ -1,24 +1,20 @@
-#include <SPI.h>
-#include <WiFi.h>
+#include<WiFi.h>
 
-const char* ssid = "";
-const char* pass = "";
+char* ssid = "MATH";
+char* pass = "";
 
-
-
-void setup() {
-Serial.begin(9600);
+void setup(){
 WiFi.begin(ssid,pass);
-
-while(WiFi.status()!= WL_CONNECTED)
+Serial.begin(9600);
+while(WiFi.status()!=WL_CONNECTED)
 {
-  Serial.println("conectando...");
-  delay(1000);
-}
-Serial.println("conectado ao wifi: "+String(ssid));
+Serial.println("tentando conectar");
+delay(1000);
 }
 
-void loop() {
+Serial.println("conectado a "+String(ssid));
 
+}
+void loop(){
 
 }
